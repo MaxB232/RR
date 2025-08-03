@@ -8,7 +8,7 @@ P=[ 0  1;   % Columns denote (x,y) locations of each of the p=2 fixed nodes (nor
 Q=[ 2  4  6  1  3  5  7;    % Locations of each of the n=7 free nodes (normalized)
     0  0  0  2  2  2  2]/8;
 U=[ 0  0  0  0  0  0  0;    % External forces on the n free nodes of the truss (normalized)
-    0 -1  0  0  0  0  0];     
+    0 1  0  0  0  0  0];     %-------------------------------------------------------------------MB CHANGE Same pos from -1 to 1
 CT=[ 1 -1  0  0  0  0  0  0  1  1  0  0  0  0  0;  % Connectivity of the truss
      0  1 -1  0  0  0  0  0  0  0  1  1  0  0  0;  % Note: each of the m=15 columns of C^T
      0  0  1 -1  0  0  0  0  0  0  0  0  1  1  0;  % (that is, each of the m=15 rows of C)

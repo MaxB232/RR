@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % This is a slight generalization of RR_Truss_Warren4, with 3 parameters
 % For the kitchen-sink generalization, see RR_Truss_GUI.  Easy.  Enjoy!
-s=20;     % number of horizontal sections in the truss (set as parameter!)
+s=5;     % number of horizontal sections in the truss (set as parameter!)
 h=0.4;   % height of the truss (set as parameter!)
 parabolic_top_chord=false;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -19,7 +19,7 @@ if parabolic_top_chord, for i=0:s-1, Q(2,s+i)=[h-4*h*((i+0.5)/s-0.5)^2]; end, en
 q=2*s-1; n=q+p;
 
 % External forces on the free nodes of the truss (normalized)
-U=zeros(2,q);  U(2,5)=-1; % Tweak here if you want force applied elsewhere...
+U=zeros(2,q);  U(2,floor(s/2))=-1; % Tweak here if you want force applied elsewhere...
 
 % Connectivity of the Warren truss with s sections
 % Note: each column of C^T has exactly one entry equal to +1, and one entry equal to -1.
